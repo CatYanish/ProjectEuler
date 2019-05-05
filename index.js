@@ -69,8 +69,35 @@ function isPrime(num) {
   }
 }
 
-const isNumPrime = isPrime(103);
-console.log(isNumPrime);
-const isNotPrime = isPrime(64)
-console.log(isNotPrime);
+// const isNumPrime = isPrime(103);
+// console.log(isNumPrime);
+// const isNotPrime = isPrime(64)
+// console.log(isNotPrime);
 
+
+function getLargestPrimeFactorOfGivenNumber (givenNumber) {
+  // for (let index = givenNumber; index = 0; index--) {
+  //   const element = array[index];
+  // }
+console.log('called getLargest prime');
+
+  let i = givenNumber;
+  let largestPrime;
+  do {
+    i = i - 1;
+    if ( givenNumber % i === 0 ) {
+      console.log(i);
+      const isPrimeFactor = isPrime(i)
+      console.log(isPrimeFactor);
+      
+      if (isPrimeFactor === true) {
+        largestPrime = i;
+        console.log(largestPrime);
+        
+      } 
+    }
+  } while (largestPrime === undefined);
+}
+
+
+getLargestPrimeFactorOfGivenNumber(600851475143);
