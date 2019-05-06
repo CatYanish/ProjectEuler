@@ -58,46 +58,42 @@ function isPrime(num) {
     return false;
   } else if (num === 2) {
     return true;
-  } else {
+  } else if ( num % 2 !== 0 ) {
     let isPrime = true; 
-    for (let index = 1; index <= num; index++) {
+    for (let index = 1; index < 10; index++) {
       if (num % index === 0 && (index !== 1 && index !== num)) {
         isPrime = false;
       }
     }
     return isPrime;
+  } else {
+    return false;
   }
 }
 
-// const isNumPrime = isPrime(103);
+// const isNumPrime = isPrime(9973);
 // console.log(isNumPrime);
-// const isNotPrime = isPrime(64)
+// const isNotPrime = isPrime(888888)
 // console.log(isNotPrime);
 
 
 function getLargestPrimeFactorOfGivenNumber (givenNumber) {
-  // for (let index = givenNumber; index = 0; index--) {
-  //   const element = array[index];
-  // }
-console.log('called getLargest prime');
-
   let i = givenNumber;
   let largestPrime;
   do {
     i = i - 1;
-    if ( givenNumber % i === 0 ) {
-      console.log(i);
-      const isPrimeFactor = isPrime(i)
-      console.log(isPrimeFactor);
-      
-      if (isPrimeFactor === true) {
-        largestPrime = i;
-        console.log(largestPrime);
-        
-      } 
+    if ((givenNumber % i === 0) && (i % 2 !== 0) ) {
+      console.log('divides evenly and is odd number: i:', i)
+      // const isPrimeFactor = isPrime(i)
+      // if (isPrimeFactor === true) {
+      //   largestPrime = i;        
+      // } 
     }
-  } while (largestPrime === undefined);
+  } while (i > 0 && largestPrime === undefined);
+  return largestPrime;
 }
 
 
-getLargestPrimeFactorOfGivenNumber(600851475143);
+const primeNum = getLargestPrimeFactorOfGivenNumber(600851475143);
+
+console.log({primeNum})
