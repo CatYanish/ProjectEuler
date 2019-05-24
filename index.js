@@ -77,52 +77,28 @@
 // // console.log(isNotPrime);
 //
 //
-// // function getLargestPrimeFactorOfGivenNumber (givenNumber) {
-// //   let i = givenNumber;
-// //   let largestPrime;
-// //   do {
-// //     i = i - 1;
-// //     if ((givenNumber % i === 0) && (i % 2 !== 0) ) {
-// //       console.log('divides evenly and is odd number: i:', i)
-// //       // const isPrimeFactor = isPrime(i)
-// //       // if (isPrimeFactor === true) {
-// //       //   largestPrime = i;
-// //       // }
-// //     }
-// //   } while (i > (givenNumber / 2) && largestPrime === undefined);
-// //   return largestPrime;
-// // }
-//
-//
-// const createArrayOfOddFactors = (givenNumber) => {
-//   let oddFactors = []
-//     for (var i = (givenNumber-1); i > 2; i--) {
-//       console.log(i);
-//       if (givenNumber % i === 0) {
-//         oddFactors.push(i)
-//       }
-//   }
-//   return oddFactors;
+
+const givenNumber = 600851475143;
+let largestPrime;
+let i = 2;
+  do {
+    i = i += 1;
+    if (givenNumber % i === 0) {
+        largestPrime = i;
+    }
+  } while (i < (givenNumber -1) );
+console.log(largestPrime);
+
+// var originalTarget = 600851475143;
+// var target = originalTarget;
+// var i = 2;
+// while(i<target) {
+// 	while(target%i === 0) {
+// 		(function(newtarget) {
+// 			console.log(target + " can be divided by " + i + " which gives us " + newtarget);
+// 			target = newtarget;
+// 		})(target / i)
+// 	}
+// 	i++;
 // }
-//
-// console.log(createArrayOfOddFactors(600851475143));
-
-// const primeNum = getLargestPrimeFactorOfGivenNumber(600851475143);
-//
-// console.log({primeNum})
-
-
-
-var originalTarget = 600851475143;
-var target = originalTarget;
-var i = 2;
-while(i<target) {
-	while(target%i === 0) {
-		(function(newtarget) {
-			console.log(target + " can be divided by " + i + " which gives us " + newtarget);
-			target = newtarget;
-		})(target / i)
-	}
-	i++;
-}
-console.log("it seems like " + target + " is the biggest prime factor for " + originalTarget);
+// console.log("it seems like " + target + " is the biggest prime factor for " + originalTarget);
