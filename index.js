@@ -93,16 +93,64 @@
 
 
 
-var originalTarget = 600851475143;
-var target = originalTarget;
-var i = 2;
-while(i<target) {
-	while(target%i === 0) {
-		(function(newtarget) {
-			console.log(target + " can be divided by " + i + " which gives us " + newtarget);
-			target = newtarget;
-		})(target / i)
-	}
-	i++;
+// var originalTarget = 600851475143;
+// var target = originalTarget;
+// var i = 2;
+// while(i<target) {
+// 	while(target%i === 0) {
+// 		(function(newtarget) {
+// 			console.log(target + " can be divided by " + i + " which gives us " + newtarget);
+// 			target = newtarget;
+// 		})(target / i)
+// 	}
+// 	i++;
+// }
+// console.log("it seems like " + target + " is the biggest prime factor for " + originalTarget);
+
+
+
+// integer to roman numerals
+
+
+const intToRomanNum = (int) => {
+	return (
+		let arabicNumber = int;
+		let romanNum = "";
+		if (arabicNumber >= 1000) {
+			while (arabicNumber >= 1000) {
+				arabicNumber =- 1000;
+				romanNum + "M";
+			}
+		} else if ( arabicNumber >= 500) {
+			while (arabicNumber >= 500) {
+				arabicNumber =- 500;
+				romanNum + "D";
+			}
+		} else if ( arabicNumber >= 100) {
+			while (arabicNumber >= 100) {
+				arabicNumber =- 100;
+				romanNum + "C";
+			}
+		} else if ( arabicNumber >= 50 ) {
+			while (arabicNumber >= 50) {
+				arabicNumber =- 50;
+				romanNum + "L";
+			}
+		} else if ( arabicNumber >= 10) {
+			while (arabicNumber >= 10) {
+				arabicNumber =- 10;
+				romanNum + "X";
+			}
+		}
+		else if ( arabicNumber >= 1) {
+			while (arabicNumber >= 1) {
+				arabicNumber =- 1;
+				romanNum + "I";
+			}
+		}
+	console.log(romanNum);
+	)
 }
-console.log("it seems like " + target + " is the biggest prime factor for " + originalTarget);
+
+
+intToRomanNum(1520);
