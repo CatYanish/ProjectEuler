@@ -112,45 +112,48 @@
 // integer to roman numerals
 
 
-const intToRomanNum = (int) => {
-	return (
+const intToRomanNum = function (int) {
 		let arabicNumber = int;
 		let romanNum = "";
-		if (arabicNumber >= 1000) {
-			while (arabicNumber >= 1000) {
-				arabicNumber =- 1000;
-				romanNum + "M";
+		while (arabicNumber > 0) {
+			if (arabicNumber >= 1000) {
+				while (arabicNumber >= 1000) {
+					arabicNumber -= 1000;
+					romanNum = romanNum + "M";
+				}
+			} else if ( arabicNumber >= 500) {
+				while (arabicNumber >= 500) {
+					arabicNumber -= 500;
+					romanNum = romanNum + "D";
+				}
+			} else if ( arabicNumber >= 100) {
+				while (arabicNumber >= 100) {
+					arabicNumber -= 100;
+					romanNum = romanNum + "C";
+				}
+			} else if ( arabicNumber >= 50 ) {
+				while (arabicNumber >= 50) {
+					arabicNumber -= 50;
+					romanNum = romanNum + "L";
+				}
+			} else if ( arabicNumber >= 10) {
+				while (arabicNumber >= 10) {
+					arabicNumber -= 10;
+					romanNum = romanNum + "X";
+				}
 			}
-		} else if ( arabicNumber >= 500) {
-			while (arabicNumber >= 500) {
-				arabicNumber =- 500;
-				romanNum + "D";
-			}
-		} else if ( arabicNumber >= 100) {
-			while (arabicNumber >= 100) {
-				arabicNumber =- 100;
-				romanNum + "C";
-			}
-		} else if ( arabicNumber >= 50 ) {
-			while (arabicNumber >= 50) {
-				arabicNumber =- 50;
-				romanNum + "L";
-			}
-		} else if ( arabicNumber >= 10) {
-			while (arabicNumber >= 10) {
-				arabicNumber =- 10;
-				romanNum + "X";
+			else if ( arabicNumber >= 1) {
+				while (arabicNumber >= 1) {
+					arabicNumber -= 1;
+					romanNum = romanNum + "I";
+				}
 			}
 		}
-		else if ( arabicNumber >= 1) {
-			while (arabicNumber >= 1) {
-				arabicNumber =- 1;
-				romanNum + "I";
-			}
-		}
-	console.log(romanNum);
-	)
+
+	console.log({romanNum});
 }
 
 
 intToRomanNum(1520);
+
+intToRomanNum(1400);
