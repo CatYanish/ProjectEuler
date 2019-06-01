@@ -121,10 +121,13 @@ const intToRomanNum = function (int) {
 					arabicNumber -= 1000;
 					romanNum = romanNum + "M";
 				}
-			} else if ( arabicNumber >= 500) {
-				while (arabicNumber >= 500) {
+			} else if ( arabicNumber >= 400) {
+				if (arabicNumber >= 500) {
 					arabicNumber -= 500;
 					romanNum = romanNum + "D";
+				} else if (arabicNumber >= 400) {
+					arabicNumber -= 400;
+					romanNum = romanNum + "CD";
 				}
 			} else if ( arabicNumber >= 100) {
 				while (arabicNumber >= 100) {
@@ -155,5 +158,15 @@ const intToRomanNum = function (int) {
 
 
 intToRomanNum(1520);
-
 intToRomanNum(1400);
+
+
+
+
+const smartRomanNumeralConversion = function (int) {
+	const arabicNumbers = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+	const romanNumerals = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+
+
+
+}
