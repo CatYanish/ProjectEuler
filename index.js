@@ -160,23 +160,35 @@
 // intToRomanNum(1520);
 // intToRomanNum(1400);
 
+//
+// const arabicNumbers = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+// const romanNumerals = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+// const smartRomanNumeralConversion = (int) => {
+// 	let num = int;
+// 	let intAsRomanNumeral = "";
+// 	let i = 0;
+// 	while (num > 0) {
+// 			if ( num >= arabicNumbers[i] ) {
+// 				num -= arabicNumbers[i];
+// 				intAsRomanNumeral = intAsRomanNumeral + romanNumerals[i];
+// 			} else {
+// 					i += 1;
+// 			}
+// 	}
+// 	console.log({intAsRomanNumeral});
+// }
+//
+//
+// smartRomanNumeralConversion(1520);
+//
+// smartRomanNumeralConversion(40);
 
-const arabicNumbers = [ 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
-const romanNumerals = [ "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
-const smartRomanNumeralConversion = function (int) {
-	let num = int;
-	let intAsRomanNumeral = "";
-	let i = 0;
-	while (num > 0) {
-			if ( num >= arabicNumbers[i] ) {
-				num -= arabicNumbers[i];
-				intAsRomanNumeral = intAsRomanNumeral + romanNumerals[i];
-			} else {
-					i += 1;
-			}
-	}
-	console.log({intAsRomanNumeral});
+
+const reverseAString = (string) => {
+	console.log(string.split('').reverse().join(''));
 }
 
 
-smartRomanNumeralConversion(1520);
+reverseAString('cat is awesome');
+reverseAString('Helter Skelter');
+reverseAString('reversing strings in my free time');
