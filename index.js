@@ -194,13 +194,32 @@
 // reverseAString('reversing strings in my free time');
 
 
-const reverseStringTheLongWay = (string) => {
+// const reverseStringTheLongWay = (string) => {
+// 	const arrayOfChar = string.split('');
+// 	let reversed = "";
+// 	for (let i = 0; i < arrayOfChar.length; i++) {
+// 		reversed = arrayOfChar[i] + reversed;
+// 	}
+// 	return reversed;
+// }
+
+// console.log(reverseStringTheLongWay('cat'));
+
+
+
+const countUpDuplicates = (string) => {
 	const arrayOfChar = string.split('');
-	let reversed = "";
-	for (let i = 0; i < arrayOfChar.length; i++) {
-		reversed = arrayOfChar[i] + reversed;
-	}
-	return reversed;
+	const obj = arrayOfChar.reduce(function(acc, item) {
+	 if(acc[item] !== undefined) {
+		acc[item]++;
+	 } else {
+		acc[item] = 1;
+	 }
+	 return acc;
+	}, {} ); 
+	return obj;
 }
 
-console.log(reverseStringTheLongWay('cat'));
+console.log(countUpDuplicates('abcdabc'));
+
+
