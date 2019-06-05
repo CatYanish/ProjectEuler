@@ -184,11 +184,23 @@
 // smartRomanNumeralConversion(40);
 
 
-const reverseAString = (string) => {
-	console.log(string.split('').reverse().join(''));
+// const reverseAString = (string) => {
+// 	console.log(string.split('').reverse().join(''));
+// }
+//
+//
+// reverseAString('cat is awesome');
+// reverseAString('Helter Skelter');
+// reverseAString('reversing strings in my free time');
+
+
+const reverseStringTheLongWay = (string) => {
+	const arrayOfChar = string.split('');
+	let reversed = "";
+	for (let i = 0; i < arrayOfChar.length; i++) {
+		reversed = arrayOfChar[i] + reversed;
+	}
+	return reversed;
 }
 
-
-reverseAString('cat is awesome');
-reverseAString('Helter Skelter');
-reverseAString('reversing strings in my free time');
+console.log(reverseStringTheLongWay('cat'));
