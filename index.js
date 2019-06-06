@@ -209,7 +209,7 @@
 
 const countUpDuplicates = (string) => {
 	const arrayOfChar = string.split('');
-	const obj = arrayOfChar.reduce(function(acc, item) {
+	const countedDupes = arrayOfChar.reduce(function(acc, item) {
 	 if(acc[item] !== undefined) {
 		acc[item]++;
 	 } else {
@@ -217,9 +217,25 @@ const countUpDuplicates = (string) => {
 	 }
 	 return acc;
 	}, {} ); 
-	return obj;
+	return countedDupes;
 }
 
 console.log(countUpDuplicates('abcdabc'));
 
 
+
+
+const findUnique = (string) => {
+	const array = string.split(''); 
+	const uniques = array.reduce((arr, item) => { 
+	 if ((array.indexOf(item) === array.lastIndexOf(item))) {
+		arr.push(item)
+	 }
+	 return arr;
+	},
+	 []);
+	return uniques;
+}
+
+console.log(findUnique('abcdabc'));
+console.log(findUnique('dddcbbba'));
