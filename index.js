@@ -315,18 +315,34 @@
 // when it’s divisible by 3, print out “Buzz”;
 //when it’s divisible by both 2 and 3, print out “Fizz Buzz”.
 
-const FizzBuzz = function (num) {
-	for (var i = 0; i <= num; i++) {
-		if (([i] % 2 === 0) && ([i] % 3 === 0)) {
-			console.log('FizzBuzz');
-		} else if ([i] % 2 === 0) {
-			console.log('Fizz');
-		} else if ([i] % 3 === 0) {
-			console.log('Buzz');
-		} else {
-			console.log([i]);
-		}
-	}
+// const FizzBuzz = function (num) {
+// 	for (var i = 0; i <= num; i++) {
+// 		if (([i] % 2 === 0) && ([i] % 3 === 0)) {
+// 			console.log('FizzBuzz');
+// 		} else if ([i] % 2 === 0) {
+// 			console.log('Fizz');
+// 		} else if ([i] % 3 === 0) {
+// 			console.log('Buzz');
+// 		} else {
+// 			console.log([i]);
+// 		}
+// 	}
+// }
+//
+// console.log(FizzBuzz(24));
+
+
+
+// Given a string of words or phrases, count the number of vowels.
+
+
+const countTheVowels = (str) => {
+	const vowels = ['a', 'e', 'i', 'o', 'u'];
+	const phrase = str.split('');
+
+	const numOfVowels = phrase.reduce(function (acc, item) { return vowels.includes(item) ? acc += 1 : acc += 0}, 0  )
+
+	return numOfVowels;
 }
 
-console.log(FizzBuzz(24));
+console.log(countTheVowels('fuck my life'))
