@@ -202,6 +202,7 @@
 // 	}
 // 	return reversed;
 // }
+
 //
 // console.log(reverseStringTheLongWay('cat'));
 
@@ -237,3 +238,41 @@ const reverseStringWithoutBuiltInMethods = function (str) {
 }
 
 console.log(reverseStringWithoutBuiltInMethods(string));
+
+
+// console.log(reverseStringTheLongWay('cat'));
+
+
+
+const countUpDuplicates = (string) => {
+	const arrayOfChar = string.split('');
+	const countedDupes = arrayOfChar.reduce(function(acc, item) {
+	 if(acc[item] !== undefined) {
+		acc[item]++;
+	 } else {
+		acc[item] = 1;
+	 }
+	 return acc;
+	}, {} );
+	return countedDupes;
+}
+
+console.log(countUpDuplicates('abcdabc'));
+
+
+
+
+const findUnique = (string) => {
+	const array = string.split('');
+	const uniques = array.reduce((arr, item) => {
+	 if ((array.indexOf(item) === array.lastIndexOf(item))) {
+		arr.push(item)
+	 }
+	 return arr;
+	},
+	 []);
+	return uniques;
+}
+
+console.log(findUnique('abcdabc'));
+console.log(findUnique('dddcbbba'));
