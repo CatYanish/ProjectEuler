@@ -278,32 +278,55 @@
 // console.log(findUnique('dddcbbba'));
 
 
-const anotherFindUnique = function(str) {
-	const arr = str.split('');
-	let uniques = [];
+// const anotherFindUnique = function(str) {
+// 	const arr = str.split('');
+// 	let uniques = [];
+//
+// 	const countedChars = arr.reduce(function(acc, item) {
+// 			if (acc[item] === undefined) {
+// 				acc[item] = 1;
+// 			} else {
+// 				acc[item] += 1;
+// 			}
+// 			return acc;
+// 	}, {} )
+//
+//
+//
+//
+// 	for (var property in countedChars) {
+// 	  if (countedChars[property] === 1) {
+// 				uniques.push(property)
+// 		};
+// 	}
+// 	console.log(uniques);
+// 	return uniques;
+// }
+//
+//
+//
+//
+// anotherFindUnique('aaccbe')
 
-	const countedChars = arr.reduce(function(acc, item) {
-			if (acc[item] === undefined) {
-				acc[item] = 1;
-			} else {
-				acc[item] += 1;
-			}
-			return acc;
-	}, {} )
 
+// 4. Fizz Buzz
+//Given a number as an input, print out every integer from 1 to that number.
+//However, when the integer is divisible by 2, print out “Fizz”;
+// when it’s divisible by 3, print out “Buzz”;
+//when it’s divisible by both 2 and 3, print out “Fizz Buzz”.
 
-
-
-	for (var property in countedChars) {
-	  if (countedChars[property] === 1) {
-				uniques.push(property)
-		};
+const FizzBuzz = function (num) {
+	for (var i = 0; i <= num; i++) {
+		if (([i] % 2 === 0) && ([i] % 3 === 0)) {
+			console.log('FizzBuzz');
+		} else if ([i] % 2 === 0) {
+			console.log('Fizz');
+		} else if ([i] % 3 === 0) {
+			console.log('Buzz');
+		} else {
+			console.log([i]);
+		}
 	}
-	console.log(uniques);
-	return uniques;
 }
 
-
-
-
-anotherFindUnique('aaccbe')
+console.log(FizzBuzz(24));
