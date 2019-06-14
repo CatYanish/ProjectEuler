@@ -336,13 +336,47 @@
 // Given a string of words or phrases, count the number of vowels.
 
 
-const countTheVowels = (str) => {
-	const vowels = ['a', 'e', 'i', 'o', 'u'];
-	const phrase = str.split('');
+// const countTheVowels = (str) => {
+// 	const vowels = ['a', 'e', 'i', 'o', 'u'];
+// 	const phrase = str.split('');
+//
+// 	const numOfVowels = phrase.reduce(function (acc, item) { return vowels.includes(item) ? acc += 1 : acc += 0}, 0  )
+//
+// 	return numOfVowels;
+// }
+//
+// console.log(countTheVowels('fuck my life'))
 
-	const numOfVowels = phrase.reduce(function (acc, item) { return vowels.includes(item) ? acc += 1 : acc += 0}, 0  )
 
-	return numOfVowels;
+const countUpCharacters = (arr) => {
+	const countedObj = arr.reduce((acc, item) => {
+		acc[item] ? acc[item] += 1 : acc[item] = 1;
+		return acc;
+	}, {})
+	// console.log(countedObj);
+	return countedObj
 }
 
-console.log(countTheVowels('fuck my life'))
+
+
+const anagramChecker = (str1, str2) => {
+	const arr1 = str1.split('');
+	const arr2 = str2.split('');
+
+	const counted1 = countUpCharacters(arr1);
+	const counted2 = countUpCharacters(arr2);
+
+	let isAnagram = true;
+
+	for (char in counted1) {
+		if (counted1[char] !== counted2[char]) {
+			isAnagram = false;
+		}
+	}
+	console.log(isAnagram);
+	return isAnagram;
+}
+
+
+anagramChecker('Hello World', 'World Hello');
+anagramChecker('not even', 'close');
