@@ -380,3 +380,28 @@ const anagramChecker = (str1, str2) => {
 
 anagramChecker('Hello World', 'World Hello');
 anagramChecker('not even', 'close');
+
+
+
+const arrayChunking = (arr, size) => {
+	const list = [];
+	let chunk = [];
+	let i = 0;
+
+		while (list.length < (arr.length / size)) {
+			chunk.push(arr[i]);
+			i++
+
+			if (chunk.length === size) {
+				list.push(chunk);
+				chunk = [];
+				// will this reset??
+			}
+		}
+
+console.log(list);
+return list;
+}
+
+
+console.log(arrayChunking([1, 2, 3, 4 ], 2));
