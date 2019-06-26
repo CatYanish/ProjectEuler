@@ -406,15 +406,25 @@
 
 
 
-const reverseWords = (phrase) => {
-  const arrayOfWords = phrase.split('');
-  let reversedPhrase = '';
-  for (var i = arrayOfWords.length - 1; i >= 0; i--) {
-    const reversedWord = arrayOfWords[i].split('').reverse();
-      reversedPhrase = reversedPhrase +  ' ' + reversedWord;
-  }
-  console.log(reversedPhrase);
-  return reversedPhrase;
+// const reverseWords = (phrase) => {
+//   const arrayOfWords = phrase.split('');
+//   let reversedPhrase = '';
+//   for (var i = arrayOfWords.length - 1; i >= 0; i--) {
+//     const reversedWord = arrayOfWords[i].split('').reverse();
+//       reversedPhrase = reversedPhrase +  ' ' + reversedWord;
+//   }
+//   console.log(reversedPhrase);
+//   return reversedPhrase;
+// }
+//
+// reverseWords("I got this!")
+
+
+const capitalizeThePhrase = (phrase) => {
+  return phrase
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' ');
 }
 
-reverseWords("I got this!")
+console.log(capitalizeThePhrase("i am not fucked"));
