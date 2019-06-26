@@ -420,11 +420,92 @@
 // reverseWords("I got this!")
 
 
-const capitalizeThePhrase = (phrase) => {
-  return phrase
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(' ');
+// const capitalizeThePhrase = (phrase) => {
+//   return phrase
+//     .split(' ')
+//     .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+//     .join(' ');
+// }
+//
+// console.log(capitalizeThePhrase("i am not fucked"));
+
+
+// const capitalize = phrase => {
+//     const words = [];
+//
+//     for (let word of phrase.split(" "))
+//         words.push(word[0].toUpperCase() + word.slice(1));
+//
+//     return words.join(" ");
+// };
+//
+// console.log(capitalize('oh my god'));
+
+
+// const alphabetPush = (phrase, int) => {
+//   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+//   const alphArray = alphabet.split('');
+//   const wordArray = phrase.split('');
+//   let shiftedArray = [];
+//   for (var i = 0; i < wordArray.length; i++) {
+//     if (wordArray[i] === ' ') {
+//       shiftedArray.push(wordArray[i])
+//     } else {
+//       let position = alphArray.indexOf(wordArray[i]);
+//       let shift = position += int;
+//       while (shift > 26) {
+//         shift = shift -= 26
+//       }
+//       shiftedArray.push(alphArray[shift - 1]);
+//     }
+//   }
+//   console.log(shiftedArray.join(''));
+//   return shiftedArray;
+// }
+//
+// console.log(alphabetPush('i love juice', 100));
+
+
+//Implement a function that add 1 to the array that represent
+//each number in the array is each digit of number. e.g. [1,2,3,4] + 1 = [1,2,3,5]
+
+
+
+// design a system to get the number of days between two dates.
+
+// new Date("dateString") is browser-dependent and discouraged, so we'll write
+// a simple parse function for U.S. date format (which does no error checking)
+// function parseDate(str) {
+//     var mdy = str.split('/');
+//     return new Date(mdy[2], mdy[0]-1, mdy[1]);
+// }
+//
+// function datediff(first, second) {
+//     // Take the difference between the dates and divide by milliseconds per day.
+//     // Round to nearest whole number to deal with DST.
+//     return Math.round((second-first)/(1000*60*60*24));
+// }
+//
+// alert(datediff(parseDate(first.value), parseDate(second.value)));
+
+
+
+const parseDate = (date) => {
+  const dateArr = date.split('-');
+  const parsedDate = new Date(dateArr[0], dateArr[1]-1, dateArr[2])
+  console.log(parsedDate);
+  return parsedDate;
 }
 
-console.log(capitalizeThePhrase("i am not fucked"));
+ const dateDistance = (date1, date2) => {
+   const first = parseDate(date1);
+   const second = parseDate(date2);
+
+   console.log(Math.round(first - second) / (1000 * 60 * 60 * 24)); 
+ }
+
+
+console.log(dateDistance('2019-6-20', '2020-01-20'));
+
+
+// Interview was just one question: writing code to generate fibonacci series.
