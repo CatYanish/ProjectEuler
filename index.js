@@ -348,60 +348,73 @@
 // console.log(countTheVowels('fuck my life'))
 
 
-const countUpCharacters = (arr) => {
-	const countedObj = arr.reduce((acc, item) => {
-		acc[item] ? acc[item] += 1 : acc[item] = 1;
-		return acc;
-	}, {})
-	// console.log(countedObj);
-	return countedObj
+// const countUpCharacters = (arr) => {
+// 	const countedObj = arr.reduce((acc, item) => {
+// 		acc[item] ? acc[item] += 1 : acc[item] = 1;
+// 		return acc;
+// 	}, {})
+// 	// console.log(countedObj);
+// 	return countedObj
+// }
+//
+//
+//
+// const anagramChecker = (str1, str2) => {
+// 	const arr1 = str1.split('');
+// 	const arr2 = str2.split('');
+//
+// 	const counted1 = countUpCharacters(arr1);
+// 	const counted2 = countUpCharacters(arr2);
+//
+// 	let isAnagram = true;
+//
+// 	for (char in counted1) {
+// 		if (counted1[char] !== counted2[char]) {
+// 			isAnagram = false;
+// 		}
+// 	}
+// 	console.log(isAnagram);
+// 	return isAnagram;
+// }
+//
+//
+// anagramChecker('Hello World', 'World Hello');
+// anagramChecker('not even', 'close');
+
+
+
+// const arrayChunking = (arr, size) => {
+// 	const list = [];
+// 	let chunk = [];
+// 	let i = 0;
+//
+// 		while (list.length < (arr.length / size)) {
+// 			chunk.push(arr[i]);
+// 			i++
+//
+// 			if (chunk.length === size) {
+// 				list.push(chunk);
+// 				chunk = [];
+// 			}
+// 		}
+// console.log(list);
+// return list;
+// }
+//
+//
+// console.log(arrayChunking([1, 2, 3, 4 ], 2));
+
+
+
+const reverseWords = (phrase) => {
+  const arrayOfWords = phrase.split('');
+  let reversedPhrase = '';
+  for (var i = arrayOfWords.length - 1; i >= 0; i--) {
+    const reversedWord = arrayOfWords[i].split('').reverse();
+      reversedPhrase = reversedPhrase +  ' ' + reversedWord;
+  }
+  console.log(reversedPhrase);
+  return reversedPhrase;
 }
 
-
-
-const anagramChecker = (str1, str2) => {
-	const arr1 = str1.split('');
-	const arr2 = str2.split('');
-
-	const counted1 = countUpCharacters(arr1);
-	const counted2 = countUpCharacters(arr2);
-
-	let isAnagram = true;
-
-	for (char in counted1) {
-		if (counted1[char] !== counted2[char]) {
-			isAnagram = false;
-		}
-	}
-	console.log(isAnagram);
-	return isAnagram;
-}
-
-
-anagramChecker('Hello World', 'World Hello');
-anagramChecker('not even', 'close');
-
-
-
-const arrayChunking = (arr, size) => {
-	const list = [];
-	let chunk = [];
-	let i = 0;
-
-		while (list.length < (arr.length / size)) {
-			chunk.push(arr[i]);
-			i++
-
-			if (chunk.length === size) {
-				list.push(chunk);
-				chunk = [];
-				// will this reset??
-			}
-		}
-
-console.log(list);
-return list;
-}
-
-
-console.log(arrayChunking([1, 2, 3, 4 ], 2));
+reverseWords("I got this!")
